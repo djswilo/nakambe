@@ -3,8 +3,6 @@ import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin, Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
 
 const Footer = () => {
-  const currentYear = new Date().getFullYear();
-
   return (
     <footer className="bg-secondary pt-16 pb-8">
       <div className="container-custom">
@@ -40,12 +38,17 @@ const Footer = () => {
               </li>
               <li>
                 <Link to="/about" className="text-foreground/70 hover:text-primary transition-colors duration-300">
-                  About Us
+                  How We Are
                 </Link>
               </li>
               <li>
                 <Link to="/services" className="text-foreground/70 hover:text-primary transition-colors duration-300">
-                  Services
+                  Our Programmes
+                </Link>
+              </li>
+              <li>
+                <Link to="/location" className="text-foreground/70 hover:text-primary transition-colors duration-300">
+                  Location
                 </Link>
               </li>
               <li>
@@ -57,7 +60,7 @@ const Footer = () => {
           </div>
 
           <div className="space-y-4">
-            <h4 className="text-lg font-medium">Our Programs</h4>
+            <h4 className="text-lg font-medium">Our Programmes</h4>
             <ul className="space-y-2">
               <li>
                 <Link to="/services" className="text-foreground/70 hover:text-primary transition-colors duration-300">
@@ -103,9 +106,23 @@ const Footer = () => {
           </div>
         </div>
 
+        {/* Location Map */}
+        <div className="mb-12 rounded-lg overflow-hidden shadow-subtle">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d115899.30316233864!2d30.61340109931122!3d-23.31761765891409!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1ec5b96d04d5ccf3%3A0xc6ebdaafd61f4a2d!2sGiyani%2C%20South%20Africa!5m2!1s0x1ec5b96d04d5ccf3%3A0xc6ebdaafd61f4a2d!2sGiyani%2C%20South%20Africa" 
+            width="100%" 
+            height="400" 
+            style={{ border: 0 }} 
+            allowFullScreen 
+            loading="lazy" 
+            referrerPolicy="no-referrer-when-downgrade"
+            title="Nakmabe Centre location"
+          ></iframe>
+        </div>
+
         <div className="pt-8 border-t border-foreground/10 text-center">
           <p className="text-foreground/60 text-sm">
-            © {currentYear} Nakmabe Centre for Child and Family Care. All rights reserved.
+            © 2025 Nakmabe Centre for Child and Family Care. All rights reserved.
           </p>
         </div>
       </div>

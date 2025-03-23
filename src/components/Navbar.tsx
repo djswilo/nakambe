@@ -59,14 +59,14 @@ const Navbar = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-10">
-            <Link to="/" className={cn("nav-link py-2", location.pathname === "/" && "after:scale-x-100")}>
-              Home
-            </Link>
             <Link to="/about" className={cn("nav-link py-2", location.pathname === "/about" && "after:scale-x-100")}>
-              About
+              How We Are
             </Link>
             <Link to="/services" className={cn("nav-link py-2", location.pathname === "/services" && "after:scale-x-100")}>
-              Services
+              Our Programmes
+            </Link>
+            <Link to="/location" className={cn("nav-link py-2", location.pathname === "/location" && "after:scale-x-100")}>
+              Location
             </Link>
             <Link to="/contact" className={cn("nav-link py-2", location.pathname === "/contact" && "after:scale-x-100")}>
               Contact
@@ -88,14 +88,14 @@ const Navbar = () => {
       {isOpen && (
         <div className="lg:hidden absolute top-full left-0 right-0 bg-white shadow-md animate-slide-down">
           <nav className="flex flex-col container-custom py-6 space-y-4">
-            <Link to="/" className="nav-link py-3 text-lg">
-              Home
-            </Link>
             <Link to="/about" className="nav-link py-3 text-lg">
-              About
+              How We Are
             </Link>
             <Link to="/services" className="nav-link py-3 text-lg">
-              Services
+              Our Programmes
+            </Link>
+            <Link to="/location" className="nav-link py-3 text-lg">
+              Location
             </Link>
             <Link to="/contact" className="nav-link py-3 text-lg">
               Contact

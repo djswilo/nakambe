@@ -15,30 +15,6 @@ const Index = () => {
     { number: "20+", label: "Community Partners" },
   ];
 
-  const testimonials = [
-    {
-      content:
-        "Nakmabe Centre has been a pillar of support in our community. Their dedication to fighting gender-based violence has made a real difference in many lives.",
-      author: "Community Member",
-      role: "Giyani Municipality",
-      image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=256&q=80",
-    },
-    {
-      content:
-        "The after-school program has been transformative for my children. They receive quality academic support and engage in enriching activities in a safe environment.",
-      author: "Parent",
-      role: "Program Beneficiary",
-      image: "https://images.unsplash.com/photo-1566492031773-4f4e44671857?ixlib=rb-4.0.3&auto=format&fit=crop&w=256&q=80",
-    },
-    {
-      content:
-        "Their family preservation services helped us navigate a difficult time. The counseling and support we received was invaluable for our family.",
-      author: "Family Member",
-      role: "Service Recipient",
-      image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=256&q=80",
-    },
-  ];
-
   return (
     <PageTransition>
       <Navbar />
@@ -112,55 +88,6 @@ const Index = () => {
                   <ChevronRight className="ml-2 h-5 w-5" />
                 </Link>
               </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Testimonials Section */}
-        <section className="section bg-secondary">
-          <div className="container-custom">
-            <div className="text-center max-w-3xl mx-auto mb-16">
-              <span className="inline-block mb-3 px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium">
-                Testimonials
-              </span>
-              <h2 className="text-3xl md:text-4xl font-serif font-medium mb-4">
-                Community Impact Stories
-              </h2>
-              <p className="text-foreground/80 leading-relaxed">
-                Hear from the individuals and families whose lives have been positively impacted by our programs and services.
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-3 gap-8">
-              {testimonials.map((testimonial, index) => (
-                <div
-                  key={index}
-                  className="card-hover bg-white p-8 rounded-xl shadow-subtle relative"
-                >
-                  <div className="mb-6">
-                    <svg
-                      className="h-10 w-10 text-primary/20"
-                      fill="currentColor"
-                      viewBox="0 0 32 32"
-                      aria-hidden="true"
-                    >
-                      <path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z" />
-                    </svg>
-                  </div>
-                  <p className="text-foreground/80 mb-6">{testimonial.content}</p>
-                  <div className="flex items-center">
-                    <img
-                      src={testimonial.image}
-                      alt={testimonial.author}
-                      className="h-12 w-12 rounded-full object-cover"
-                    />
-                    <div className="ml-4">
-                      <h4 className="font-medium">{testimonial.author}</h4>
-                      <p className="text-sm text-foreground/60">{testimonial.role}</p>
-                    </div>
-                  </div>
-                </div>
-              ))}
             </div>
           </div>
         </section>
