@@ -65,11 +65,8 @@ const Navbar = () => {
             <Link to="/services" className={cn("nav-link py-2", location.pathname === "/services" && "after:scale-x-100")}>
               Our Programmes
             </Link>
-            <Link to="/location" className={cn("nav-link py-2", location.pathname === "/location" && "after:scale-x-100")}>
-              Location
-            </Link>
             <Link to="/contact" className={cn("nav-link py-2", location.pathname === "/contact" && "after:scale-x-100")}>
-              Contact
+              Get in Touch
             </Link>
           </nav>
 
@@ -94,11 +91,8 @@ const Navbar = () => {
             <Link to="/services" className="nav-link py-3 text-lg">
               Our Programmes
             </Link>
-            <Link to="/location" className="nav-link py-3 text-lg">
-              Location
-            </Link>
             <Link to="/contact" className="nav-link py-3 text-lg">
-              Contact
+              Get in Touch
             </Link>
           </nav>
         </div>

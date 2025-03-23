@@ -4,105 +4,77 @@ import Footer from "@/components/Footer";
 import PageTransition from "@/components/PageTransition";
 import { Link } from "react-router-dom";
 import { 
-  TrendingUp, Briefcase, BarChart2, PieChart, 
-  LineChart, Users, Target, ChevronRight 
+  HeartHandshake, Home, Shield, 
+  Sparkles, BookOpen, HeartPulse, ChevronRight
 } from "lucide-react";
 
 const ServicesPage = () => {
   const services = [
     {
-      icon: <TrendingUp className="h-8 w-8" />,
-      title: "Strategic Growth Planning",
-      description: "Develop comprehensive strategies to achieve sustainable business growth aligned with your vision and goals.",
+      icon: <HeartHandshake className="h-8 w-8" />,
+      title: "GBV Prevention & Support",
+      description: "Providing psychosocial support, counselling, awareness campaigns, and community outreach to combat gender-based violence.",
       details: [
-        "Market opportunity assessment",
-        "Growth strategy development",
-        "Implementation roadmap",
-        "Performance metrics and monitoring"
+        "Initial engagement and client reception",
+        "Assessment and care plan development",
+        "Court preparation and support",
+        "Individual and group counselling sessions"
       ]
     },
     {
-      icon: <Briefcase className="h-8 w-8" />,
-      title: "Business Process Optimization",
-      description: "Streamline your business processes to improve efficiency, reduce costs, and enhance overall performance.",
+      icon: <Home className="h-8 w-8" />,
+      title: "Family Preservation Services",
+      description: "Offering mediation, parenting plan development, bereavement counselling, and conflict resolution interventions.",
       details: [
-        "Process mapping and analysis",
-        "Efficiency optimization",
-        "Automation opportunities",
-        "Implementation support"
+        "Marital dispute resolution",
+        "Parenting agreements development",
+        "Bereavement and trauma counselling",
+        "Conflict resolution interventions"
       ]
     },
     {
-      icon: <BarChart2 className="h-8 w-8" />,
-      title: "Financial Analysis & Planning",
-      description: "Gain valuable insights into your financial performance and develop strategies to improve financial health.",
+      icon: <Shield className="h-8 w-8" />,
+      title: "Anti-Substance Abuse Services",
+      description: "Providing prevention, treatment, and rehabilitation support for individuals affected by substance abuse.",
       details: [
-        "Financial performance analysis",
-        "Budgeting and forecasting",
-        "Cost reduction strategies",
-        "Investment planning"
+        "Prevention programs",
+        "Counselling and therapy",
+        "Outpatient support services",
+        "Community awareness initiatives"
       ]
     },
     {
-      icon: <PieChart className="h-8 w-8" />,
-      title: "Market Research & Analysis",
-      description: "Understand your market, competitors, and customers to make informed business decisions.",
+      icon: <Sparkles className="h-8 w-8" />,
+      title: "Restorative Justice & Child Diversion",
+      description: "Offering diversion and rehabilitation services for children at risk or in conflict with the law.",
       details: [
-        "Market trend analysis",
-        "Competitive landscape assessment",
-        "Customer insights research",
-        "Market opportunity identification"
+        "Victim-Offender Mediation (Mina na Makwerhu)",
+        "Family Group Conferences (Midyangu ya Hina)",
+        "Youth Life Skills Development (Rendzo ra Mina)",
+        "Rehabilitation support"
       ]
     },
     {
-      icon: <LineChart className="h-8 w-8" />,
-      title: "Performance Metrics & KPIs",
-      description: "Develop and implement key performance indicators to measure and improve business performance.",
+      icon: <BookOpen className="h-8 w-8" />,
+      title: "After-School Care Programme",
+      description: "Supporting children with academic progress and holistic development while reducing dropout rates and social risks.",
       details: [
-        "KPI framework development",
-        "Performance dashboard creation",
-        "Data analysis and insights",
-        "Performance improvement strategies"
+        "Homework supervision and academic support",
+        "Reading and writing skills development",
+        "Sports, music, drama, and recreational activities",
+        "Structured and free play under supervision"
       ]
     },
     {
-      icon: <Users className="h-8 w-8" />,
-      title: "Organizational Development",
-      description: "Enhance your organizational structure, culture, and team performance to support business goals.",
+      icon: <HeartPulse className="h-8 w-8" />,
+      title: "Other Support Services",
+      description: "Providing additional services including HIV/AIDS prevention, support for vulnerable populations, and mental health promotion.",
       details: [
-        "Organizational assessment",
-        "Team structure optimization",
-        "Leadership development",
-        "Culture enhancement strategies"
+        "HIV/AIDS prevention, care, and support",
+        "Protection of vulnerable children",
+        "Support services for persons with disabilities",
+        "Elderly care and mental health services"
       ]
-    },
-  ];
-
-  const process = [
-    {
-      number: "01",
-      title: "Initial Consultation",
-      description: "We begin with a thorough consultation to understand your business, challenges, and goals."
-    },
-    {
-      number: "02",
-      title: "Assessment & Analysis",
-      description: "Our team conducts a comprehensive analysis of your business situation and identifies opportunities."
-    },
-    {
-      number: "03",
-      title: "Strategy Development",
-      description: "We develop tailored strategies and solutions designed to address your specific needs."
-    },
-    {
-      number: "04",
-      title: "Implementation",
-      description: "We support you throughout the implementation process to ensure effective execution."
-    },
-    {
-      number: "05",
-      title: "Monitoring & Refinement",
-      description: "We track progress, measure results, and refine strategies as needed to achieve optimal outcomes."
     },
   ];
 
@@ -115,14 +87,14 @@ const ServicesPage = () => {
           <div className="container-custom">
             <div className="text-center max-w-3xl mx-auto">
               <span className="inline-block mb-3 px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium">
-                Our Services
+                Our Programmes
               </span>
               <h1 className="text-4xl md:text-5xl font-serif font-semibold mb-6">
-                Comprehensive Business Consulting
+                Community Support & Development
               </h1>
               <p className="text-lg text-foreground/80 leading-relaxed">
-                We offer a wide range of consulting services designed to help your business thrive.
-                Each service is tailored to address your unique challenges and opportunities.
+                We offer a wide range of programmes designed to strengthen families, protect children,
+                and build a resilient community free from violence and social ills.
               </p>
             </div>
           </div>
@@ -161,67 +133,20 @@ const ServicesPage = () => {
           </div>
         </section>
 
-        {/* Our Process Section */}
-        <section className="section bg-secondary">
-          <div className="container-custom">
-            <div className="text-center max-w-3xl mx-auto mb-16">
-              <span className="inline-block mb-3 px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium">
-                Our Approach
-              </span>
-              <h2 className="text-3xl md:text-4xl font-serif font-medium mb-4">
-                Our Consulting Process
-              </h2>
-              <p className="text-foreground/80 leading-relaxed">
-                We follow a structured, collaborative approach to ensure we deliver 
-                effective solutions tailored to your business needs.
-              </p>
-            </div>
-
-            <div className="relative">
-              {/* Process timeline line */}
-              <div className="absolute top-0 bottom-0 left-[28px] md:left-1/2 w-0.5 bg-primary/20"></div>
-              
-              <div className="space-y-12">
-                {process.map((step, index) => (
-                  <div key={index} className="relative">
-                    <div className={`md:flex items-center ${index % 2 === 0 ? '' : 'md:flex-row-reverse'}`}>
-                      {/* Timeline circle */}
-                      <div className="absolute left-0 md:left-1/2 md:-translate-x-1/2 w-14 h-14 rounded-full bg-white shadow-subtle flex items-center justify-center z-10">
-                        <span className="text-primary font-medium">{step.number}</span>
-                      </div>
-
-                      {/* Content */}
-                      <div className={`md:w-1/2 ${index % 2 === 0 ? 'md:pr-16 md:text-right' : 'md:pl-16'} pl-20 md:pl-0`}>
-                        <div className="bg-white p-6 rounded-xl shadow-subtle">
-                          <h3 className="text-xl font-medium mb-2">{step.title}</h3>
-                          <p className="text-foreground/70">{step.description}</p>
-                        </div>
-                      </div>
-                      
-                      {/* Empty space for alternating layout */}
-                      <div className="hidden md:block md:w-1/2"></div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
         {/* CTA Section */}
         <section className="section bg-primary text-white text-center">
           <div className="container-custom max-w-3xl">
             <h2 className="text-3xl md:text-4xl font-serif font-medium mb-6">
-              Ready to Elevate Your Business?
+              Want to Learn More About Our Programmes?
             </h2>
             <p className="text-white/80 text-lg mb-8">
-              Contact us today to schedule a consultation and discover how our services can help your business reach its full potential.
+              Contact us today to find out how our services can help you, your family, or your community.
             </p>
             <Link
               to="/contact"
               className="button-hover px-8 py-4 bg-white text-primary rounded-full inline-flex items-center font-medium shadow-lg"
             >
-              Get Started
+              Get in Touch
               <ChevronRight className="ml-2 h-5 w-5" />
             </Link>
           </div>

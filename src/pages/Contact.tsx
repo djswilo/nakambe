@@ -76,10 +76,10 @@ const ContactPage = () => {
           </div>
         </section>
 
-        {/* Contact Form and Map Section */}
+        {/* Contact Form Section */}
         <section className="section bg-secondary">
           <div className="container-custom">
-            <div className="grid lg:grid-cols-2 gap-12">
+            <div className="max-w-3xl mx-auto">
               <div className="space-y-8">
                 <div>
                   <h2 className="text-3xl font-serif font-medium mb-4">
@@ -90,28 +90,6 @@ const ContactPage = () => {
                   </p>
                 </div>
                 <ContactForm />
-              </div>
-
-              <div className="space-y-8">
-                <div>
-                  <h2 className="text-3xl font-serif font-medium mb-4">
-                    Our Location
-                  </h2>
-                  <p className="text-foreground/80 mb-6">
-                    Visit our center for face-to-face consultation with our professional staff.
-                  </p>
-                </div>
-                <div className="h-[400px] bg-white rounded-xl overflow-hidden shadow-subtle">
-                  {/* Map iframe */}
-                  <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d234567.12345678!2d30.7185!3d-23.3020!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1ec5b4e9f692e36b%3A0x562b9cb1f3d4fc8e!2sGiyani%2C%20South%20Africa!5e0!3m2!1sen!2s!4v1659452719046!5m2!1sen!2s"
-                    className="w-full h-full border-0"
-                    allowFullScreen
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                    title="Nakmabe Centre location"
-                  ></iframe>
-                </div>
               </div>
             </div>
           </div>
