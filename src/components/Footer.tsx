@@ -10,9 +10,9 @@ const Footer = () => {
       <div className="container-custom">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           <div className="space-y-4">
-            <h3 className="text-xl font-serif font-medium">Nakambe</h3>
+            <h3 className="text-xl font-serif font-medium">Nakmabe Centre</h3>
             <p className="text-foreground/80 leading-relaxed">
-              Providing quality business consulting services with integrity and dedication to help your business grow.
+              A community-based non-profit organization dedicated to providing holistic care and support to children, families, and communities.
             </p>
             <div className="flex space-x-4">
               <a href="#" className="text-foreground/70 hover:text-primary transition-colors duration-300">
@@ -57,26 +57,26 @@ const Footer = () => {
           </div>
 
           <div className="space-y-4">
-            <h4 className="text-lg font-medium">Services</h4>
+            <h4 className="text-lg font-medium">Our Programs</h4>
             <ul className="space-y-2">
               <li>
                 <Link to="/services" className="text-foreground/70 hover:text-primary transition-colors duration-300">
-                  Business Consulting
+                  GBV Prevention & Support
                 </Link>
               </li>
               <li>
                 <Link to="/services" className="text-foreground/70 hover:text-primary transition-colors duration-300">
-                  Strategic Planning
+                  Family Preservation
                 </Link>
               </li>
               <li>
                 <Link to="/services" className="text-foreground/70 hover:text-primary transition-colors duration-300">
-                  Financial Analysis
+                  After-School Care
                 </Link>
               </li>
               <li>
                 <Link to="/services" className="text-foreground/70 hover:text-primary transition-colors duration-300">
-                  Market Research
+                  Anti-Substance Abuse
                 </Link>
               </li>
             </ul>
@@ -88,16 +88,16 @@ const Footer = () => {
               <li className="flex items-start">
                 <MapPin className="mr-3 h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
                 <span className="text-foreground/70">
-                  1234 Business Avenue, Suite 500, New York, NY 10001
+                  1513 Section E, Greater Giyani Municipality, Mopani District, Limpopo Province, South Africa
                 </span>
               </li>
               <li className="flex items-center">
                 <Phone className="mr-3 h-5 w-5 text-primary flex-shrink-0" />
-                <span className="text-foreground/70">+1 (555) 123-4567</span>
+                <span className="text-foreground/70">Contact number here</span>
               </li>
               <li className="flex items-center">
                 <Mail className="mr-3 h-5 w-5 text-primary flex-shrink-0" />
-                <span className="text-foreground/70">info@nakambe.com</span>
+                <span className="text-foreground/70">info@nakmabe.org</span>
               </li>
             </ul>
           </div>
@@ -105,7 +105,7 @@ const Footer = () => {
 
         <div className="pt-8 border-t border-foreground/10 text-center">
           <p className="text-foreground/60 text-sm">
-            © {currentYear} Nakambe Consulting. All rights reserved.
+            © {currentYear} Nakmabe Centre for Child and Family Care. All rights reserved.
           </p>
         </div>
       </div>

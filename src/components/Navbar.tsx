@@ -41,10 +41,21 @@ const Navbar = () => {
             className="text-2xl font-serif font-medium tracking-tight"
             aria-label="Home"
           >
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-foreground to-foreground/80">
-              Nakambe
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/80">
+              Nakmabe
             </span>
           </Link>
+
+          {/* Logo in center */}
+          <div className="absolute left-1/2 transform -translate-x-1/2">
+            <Link to="/" aria-label="Nakmabe Centre">
+              <img 
+                src="/lovable-uploads/89852479-5570-4b2c-979d-13ec7ce39841.png" 
+                alt="Nakmabe Centre Logo" 
+                className="h-16 w-auto"
+              />
+            </Link>
+          </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-10">

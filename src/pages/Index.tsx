@@ -9,32 +9,32 @@ import PageTransition from "@/components/PageTransition";
 
 const Index = () => {
   const stats = [
-    { number: "12+", label: "Years of Experience" },
-    { number: "200+", label: "Clients Served" },
-    { number: "94%", label: "Client Retention" },
-    { number: "50+", label: "Industry Experts" },
+    { number: "5+", label: "Years of Service" },
+    { number: "200+", label: "Families Supported" },
+    { number: "6", label: "Core Programs" },
+    { number: "20+", label: "Community Partners" },
   ];
 
   const testimonials = [
     {
       content:
-        "Nakambe transformed our business operations with their strategic consulting. Their team's expertise and dedication to our success made all the difference.",
-      author: "Sarah Johnson",
-      role: "CEO, TechVision Inc.",
+        "Nakmabe Centre has been a pillar of support in our community. Their dedication to fighting gender-based violence has made a real difference in many lives.",
+      author: "Community Member",
+      role: "Giyani Municipality",
       image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=256&q=80",
     },
     {
       content:
-        "Their financial analysis services provided invaluable insights that helped us make informed decisions and significantly improve our bottom line.",
-      author: "Michael Chen",
-      role: "CFO, Global Solutions",
+        "The after-school program has been transformative for my children. They receive quality academic support and engage in enriching activities in a safe environment.",
+      author: "Parent",
+      role: "Program Beneficiary",
       image: "https://images.unsplash.com/photo-1566492031773-4f4e44671857?ixlib=rb-4.0.3&auto=format&fit=crop&w=256&q=80",
     },
     {
       content:
-        "The market research conducted by Nakambe helped us identify new growth opportunities and better understand our target audience.",
-      author: "Lisa Rodriguez",
-      role: "Marketing Director, Elevate Group",
+        "Their family preservation services helped us navigate a difficult time. The counseling and support we received was invaluable for our family.",
+      author: "Family Member",
+      role: "Service Recipient",
       image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=256&q=80",
     },
   ];
@@ -53,8 +53,8 @@ const Index = () => {
               <div className="relative h-[500px] animate-fade-in">
                 <div className="absolute inset-0 rounded-2xl overflow-hidden">
                   <img
-                    src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80"
-                    alt="Business professionals in a meeting"
+                    src="https://images.unsplash.com/photo-1491438590914-bc09fcaaf77a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80"
+                    alt="Community support and family care"
                     className="w-full h-full object-cover"
                   />
                 </div>
@@ -81,20 +81,19 @@ const Index = () => {
                     Why Choose Us
                   </span>
                   <h2 className="text-3xl md:text-4xl font-serif font-medium mb-4">
-                    Trusted Business Advisors with Proven Results
+                    Committed to Empowering Communities
                   </h2>
                   <p className="text-foreground/80 leading-relaxed">
-                    With over a decade of experience, our team of consultants brings deep industry
-                    knowledge and a results-oriented approach to every client engagement.
+                    Since 2017, Nakmabe Centre has been dedicated to providing holistic care and support to children, families, and communities, focusing on gender-based violence prevention, psychosocial support, family preservation, and child protection.
                   </p>
                 </div>
 
                 <div className="space-y-4">
                   {[
-                    "Experienced industry professionals",
-                    "Tailored strategies for your unique needs",
-                    "Data-driven approach to problem-solving",
-                    "Ongoing support and implementation guidance",
+                    "Community-driven approach to service delivery",
+                    "Qualified and registered professional staff",
+                    "Integrated and multidisciplinary services",
+                    "Focus on creating safe, supportive environments",
                   ].map((item, index) => (
                     <div key={index} className="flex items-start">
                       <div className="h-6 w-6 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 mt-0.5">
@@ -125,11 +124,10 @@ const Index = () => {
                 Testimonials
               </span>
               <h2 className="text-3xl md:text-4xl font-serif font-medium mb-4">
-                What Our Clients Say
+                Community Impact Stories
               </h2>
               <p className="text-foreground/80 leading-relaxed">
-                Don't just take our word for it. Hear from the businesses we've helped transform
-                through our consulting services.
+                Hear from the individuals and families whose lives have been positively impacted by our programs and services.
               </p>
             </div>
 
@@ -171,11 +169,10 @@ const Index = () => {
         <section className="section bg-gradient-to-r from-primary/90 to-primary text-white">
           <div className="container-custom text-center max-w-4xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-serif font-medium mb-6">
-              Ready to Transform Your Business?
+              Ready to Support Our Mission?
             </h2>
             <p className="text-white/80 text-lg mb-8 max-w-2xl mx-auto">
-              Schedule a consultation with our team to discuss how our consulting services can help
-              your business achieve its goals.
+              Contact us to learn more about our programs, volunteer opportunities, or how you can contribute to creating a healthier, empowered community.
             </p>
             <Link
               to="/contact"

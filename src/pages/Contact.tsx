@@ -10,17 +10,17 @@ const ContactPage = () => {
     {
       icon: <MapPin className="h-6 w-6" />,
       title: "Our Location",
-      details: ["1234 Business Avenue", "Suite 500", "New York, NY 10001"],
+      details: ["1513 Section E", "Greater Giyani Municipality", "Mopani District, Limpopo Province"],
     },
     {
       icon: <Phone className="h-6 w-6" />,
       title: "Phone Number",
-      details: ["+1 (555) 123-4567", "+1 (555) 987-6543"],
+      details: ["Contact number here"],
     },
     {
       icon: <Mail className="h-6 w-6" />,
       title: "Email Address",
-      details: ["info@nakambe.com", "support@nakambe.com"],
+      details: ["info@nakmabe.org"],
     },
     {
       icon: <Clock className="h-6 w-6" />,
@@ -44,8 +44,7 @@ const ContactPage = () => {
                 Contact Us
               </h1>
               <p className="text-lg text-foreground/80 leading-relaxed">
-                Have questions about our services? Ready to get started? Contact us today and let's 
-                discuss how we can help your business thrive.
+                Have questions about our programs and services? Ready to get involved? Contact us today and let's discuss how we can work together for community empowerment.
               </p>
             </div>
           </div>
@@ -99,18 +98,18 @@ const ContactPage = () => {
                     Our Location
                   </h2>
                   <p className="text-foreground/80 mb-6">
-                    Visit our office for a face-to-face consultation with our business experts.
+                    Visit our center for face-to-face consultation with our professional staff.
                   </p>
                 </div>
                 <div className="h-[400px] bg-white rounded-xl overflow-hidden shadow-subtle">
                   {/* Map iframe */}
                   <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193595.15830872278!2d-74.11976379633643!3d40.69766374879752!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2s!4v1659452719046!5m2!1sen!2s"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d234567.12345678!2d30.7185!3d-23.3020!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1ec5b4e9f692e36b%3A0x562b9cb1f3d4fc8e!2sGiyani%2C%20South%20Africa!5e0!3m2!1sen!2s!4v1659452719046!5m2!1sen!2s"
                     className="w-full h-full border-0"
                     allowFullScreen
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
-                    title="Nakambe office location"
+                    title="Nakmabe Centre location"
                   ></iframe>
                 </div>
               </div>
@@ -129,7 +128,7 @@ const ContactPage = () => {
                 Frequently Asked Questions
               </h2>
               <p className="text-foreground/80 leading-relaxed">
-                Find answers to commonly asked questions about our consulting services.
+                Find answers to commonly asked questions about our programs and services.
               </p>
             </div>
 
@@ -137,20 +136,20 @@ const ContactPage = () => {
               <div className="space-y-6">
                 {[
                   {
-                    question: "What industries do you specialize in?",
-                    answer: "We provide consulting services across a wide range of industries, including technology, healthcare, finance, retail, manufacturing, and more. Our team has diverse expertise that allows us to understand the unique challenges and opportunities in various sectors."
+                    question: "What services does Nakmabe Centre offer?",
+                    answer: "Nakmabe Centre offers a range of services including Gender-Based Violence prevention and support, family preservation services, after-school care programs, anti-substance abuse services, restorative justice programs, and child protection services."
                   },
                   {
-                    question: "How long does a typical consulting project take?",
-                    answer: "The duration of our consulting projects varies depending on the scope, complexity, and specific needs of your business. Some projects may be completed in a few weeks, while others might span several months. During our initial consultation, we'll provide a more accurate timeline based on your specific requirements."
+                    question: "How can I access your services?",
+                    answer: "You can access our services by contacting our office directly, visiting our center during business hours, or completing the contact form on our website. Our team will guide you through the process based on your specific needs."
                   },
                   {
-                    question: "What is your consulting approach?",
-                    answer: "Our approach is collaborative and tailored to your business needs. We begin with a thorough assessment to understand your current situation, challenges, and goals. We then develop customized strategies and work closely with your team throughout implementation, providing ongoing support and adjustments as needed."
+                    question: "Are your services free?",
+                    answer: "As a non-profit organization, many of our core services are provided free of charge to vulnerable community members. Some specialized programs may have nominal fees, but we work to ensure that cost is not a barrier to accessing needed support."
                   },
                   {
-                    question: "How do you measure the success of your consulting services?",
-                    answer: "We establish clear, measurable objectives at the beginning of each project and track progress against these metrics throughout our engagement. Success might be measured in terms of revenue growth, cost reduction, process efficiency improvements, or other key performance indicators relevant to your business goals."
+                    question: "How can I support Nakmabe Centre's work?",
+                    answer: "There are many ways to support our work, including volunteering your time, making donations, partnering with us as a business or organization, or helping raise awareness about our programs in the community. Contact us to discuss how you can contribute."
                   },
                 ].map((faq, index) => (
                   <div key={index} className="bg-white p-6 rounded-xl shadow-subtle">
