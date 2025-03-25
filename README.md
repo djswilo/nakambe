@@ -1,26 +1,43 @@
-# Welcome to your Lovable project
+
+# Nakmabe Centre for Child and Family Care Website
 
 ## Project info
 
 **URL**: https://lovable.dev/projects/771b15dc-973e-47f4-a5dd-babe931c3ea9
 
-## How can I edit this code?
+## About the Project
 
-There are several ways of editing your application.
+This website serves as the online presence for Nakmabe Centre for Child and Family Care, a community-based non-profit organization located in Greater Giyani Municipality, Mopani District, Limpopo Province, South Africa. The organization provides holistic care and support to children, families, and communities, focusing on gender-based violence prevention, psychosocial support, family preservation, and child protection.
 
-**Use Lovable**
+## Features
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/771b15dc-973e-47f4-a5dd-babe931c3ea9) and start prompting.
+- Responsive design that works on mobile, tablet, and desktop devices
+- Information about the organization's history, mission, and programs
+- Contact form for inquiries
+- Program details and information
+- User authentication (UI implemented, backend pending)
+- Dashboard for registered users (UI implemented, functionality pending)
 
-Changes made via Lovable will be committed automatically to this repo.
+See the complete list of features in `src/docs/features.md`.
 
-**Use your preferred IDE**
+## Change Log
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+All changes to the project are logged in the `CHANGES.md` file. Any new changes should be documented in this file.
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## Technologies Used
 
-Follow these steps:
+This project is built with:
+
+- Vite
+- TypeScript
+- React
+- shadcn-ui
+- Tailwind CSS
+- Framer Motion for animations
+
+## How to Use
+
+### Running locally
 
 ```sh
 # Step 1: Clone the repository using the project's Git URL.
@@ -36,34 +53,39 @@ npm i
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+### Using Lovable
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+Simply visit the [Lovable Project](https://lovable.dev/projects/771b15dc-973e-47f4-a5dd-babe931c3ea9) and start prompting.
 
-**Use GitHub Codespaces**
+Changes made via Lovable will be committed automatically to this repo.
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## Database Schema
 
-## What technologies are used for this project?
+The database schema is documented in `src/docs/database-schema.md`. This outlines the planned Supabase database structure that will be implemented.
 
-This project is built with .
+## Future Development
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+The website is being developed in phases:
 
-## How can I deploy this project?
+1. **Phase 1 (Completed)**: Basic website with information about the organization and contact details
+2. **Phase 2 (In Progress)**: User authentication and basic dashboard UI
+3. **Phase 3 (Planned)**: Integration with Supabase for authentication and database functionality
+4. **Phase 4 (Planned)**: Implementation of booking system, child management, and payment processing
 
-Simply open [Lovable](https://lovable.dev/projects/771b15dc-973e-47f4-a5dd-babe931c3ea9) and click on Share -> Publish.
+## Deployment
 
-## I want to use a custom domain - is that possible?
+The project can be deployed using Lovable's deployment functionality. Simply open [Lovable](https://lovable.dev/projects/771b15dc-973e-47f4-a5dd-babe931c3ea9) and click on Share -> Publish.
 
-We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)
+## Contributing
+
+For any changes to the project, please:
+
+1. Document the changes in the `CHANGES.md` file
+2. Follow the existing code style and conventions
+3. Create focused, small components rather than large monolithic ones
+4. Use TypeScript types appropriately
+5. Comment your code where necessary
+
+## License
+
+This project is proprietary and all rights are reserved by Nakmabe Centre for Child and Family Care.

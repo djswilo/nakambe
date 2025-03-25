@@ -78,30 +78,25 @@ const ContactPage = () => {
           </div>
         </section>
 
-        {/* Map Section */}
+        {/* Map and Contact Form Section - Updated to side-by-side layout */}
         <section className="py-16 bg-secondary/50">
           <div className="container-custom">
-            <div className="max-w-5xl mx-auto">
-              <h2 className="text-3xl font-serif font-medium mb-8 text-center">Our Location</h2>
-              <GoogleMap />
-            </div>
-          </div>
-        </section>
-
-        {/* Contact Form Section */}
-        <section className="section bg-secondary">
-          <div className="container-custom">
-            <div className="max-w-3xl mx-auto">
-              <div className="space-y-8">
+            <h2 className="text-3xl font-serif font-medium mb-8 text-center">Get In Touch</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="space-y-8 order-2 md:order-1">
                 <div>
-                  <h2 className="text-3xl font-serif font-medium mb-4">
+                  <h3 className="text-xl font-serif font-medium mb-4">
                     Send Us a Message
-                  </h2>
+                  </h3>
                   <p className="text-foreground/80 mb-6">
                     Fill out the form below and our team will get back to you as soon as possible.
                   </p>
                 </div>
                 <ContactForm />
+              </div>
+              <div className="order-1 md:order-2">
+                <h3 className="text-xl font-serif font-medium mb-4">Our Location</h3>
+                <GoogleMap />
               </div>
             </div>
           </div>
