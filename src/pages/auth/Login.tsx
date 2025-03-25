@@ -25,7 +25,7 @@ const LoginPage = () => {
     setIsLoading(true);
     
     try {
-      const { error, data } = await signIn(email, password);
+      const { data, error } = await signIn(email, password);
       
       if (error) {
         toast({
@@ -33,7 +33,7 @@ const LoginPage = () => {
           description: error.message,
           variant: "destructive",
         });
-      } else if (data) {
+      } else if (data?.session) {
         toast({
           title: "Login successful",
           description: "Welcome back to Nakmabe Centre!",

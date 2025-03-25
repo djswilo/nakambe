@@ -44,7 +44,7 @@ const RegisterPage = () => {
     setIsLoading(true);
 
     try {
-      const { error, data } = await signUp(
+      const { data, error } = await signUp(
         formData.email, 
         formData.password,
         { 
