@@ -115,7 +115,8 @@ export default {
 			},
 			fontFamily: {
 				sans: ['Inter', 'sans-serif'],
-				serif: ['Playfair Display', 'serif']
+				serif: ['Playfair Display', 'serif'],
+				lato: ['Lato', 'sans-serif']
 			},
 			boxShadow: {
 				subtle: '0 2px 10px rgba(0, 0, 0, 0.04)',

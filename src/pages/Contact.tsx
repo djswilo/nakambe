@@ -4,6 +4,8 @@ import Footer from "@/components/Footer";
 import ContactForm from "@/components/ContactForm";
 import PageTransition from "@/components/PageTransition";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
+import GoogleMap from "@/components/contact/GoogleMap";
+import FloatingContactButton from "@/components/FloatingContactButton";
 
 const ContactPage = () => {
   const contactInfo = [
@@ -15,7 +17,7 @@ const ContactPage = () => {
     {
       icon: <Phone className="h-6 w-6" />,
       title: "Phone Number",
-      details: ["Contact number here"],
+      details: ["0826 399 6966"],
     },
     {
       icon: <Mail className="h-6 w-6" />,
@@ -72,6 +74,16 @@ const ContactPage = () => {
                   </div>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Map Section */}
+        <section className="py-16 bg-secondary/50">
+          <div className="container-custom">
+            <div className="max-w-5xl mx-auto">
+              <h2 className="text-3xl font-serif font-medium mb-8 text-center">Our Location</h2>
+              <GoogleMap />
             </div>
           </div>
         </section>
@@ -141,6 +153,7 @@ const ContactPage = () => {
         </section>
       </main>
       <Footer />
+      <FloatingContactButton />
     </PageTransition>
   );
 };

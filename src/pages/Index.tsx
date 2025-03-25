@@ -3,9 +3,10 @@ import HeroSection from "@/components/HeroSection";
 import FeaturesSection from "@/components/FeaturesSection";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { Check, Users, Building, TrendingUp, ChevronRight } from "lucide-react";
+import { Check, ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import PageTransition from "@/components/PageTransition";
+import FloatingContactButton from "@/components/FloatingContactButton";
 
 const Index = () => {
   const stats = [
@@ -112,6 +113,7 @@ const Index = () => {
         </section>
       </main>
       <Footer />
+      <FloatingContactButton />
     </PageTransition>
   );
 };

@@ -4,6 +4,7 @@ import { ArrowLeft } from "lucide-react";
 import PageTransition from "@/components/PageTransition";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import FloatingContactButton from "@/components/FloatingContactButton";
 
 const NotFound = () => {
   return (
@@ -28,6 +29,7 @@ const NotFound = () => {
         </div>
       </main>
       <Footer />
+      <FloatingContactButton />
     </PageTransition>
   );
 };
