@@ -1,7 +1,7 @@
 
 import { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
-import { Menu, X, UserCircle } from "lucide-react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Menu, X, LogOut } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import {
@@ -11,6 +11,8 @@ import {
   DialogTitle,
   DialogTrigger
 } from "@/components/ui/dialog";
+import { useAuth } from "@/components/auth/AuthProvider";
+import { useToast } from "@/hooks/use-toast";
 import LoginForm from "@/components/auth/LoginForm";
 
 const Navbar = () => {
@@ -18,6 +20,9 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isLoginOpen, setIsLoginOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
+  const { user, signOut } = useAuth();
+  const { toast } = useToast();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -37,6 +42,23 @@ const Navbar = () => {
     setIsOpen(false);
   }, [location.pathname]);
 
+  const handleSignOut = async () => {
+    const { error } = await signOut();
+    if (error) {
+      toast({
+        title: "Error signing out",
+        description: error.message,
+        variant: "destructive",
+      });
+    } else {
+      toast({
+        title: "Signed out successfully",
+        description: "You have been signed out of your account",
+      });
+      navigate("/");
+    }
+  };
+
   return (
     <header
       className={cn(
@@ -46,26 +68,8 @@ const Navbar = () => {
     >
       <div className="container-custom">
         <div className="flex items-center justify-between">
-          {/* Left side with login */}
-          <div className="flex items-center space-x-4">
-            <Dialog open={isLoginOpen} onOpenChange={setIsLoginOpen}>
-              <DialogTrigger asChild>
-                <Button variant="outline" size="sm" className="flex items-center gap-2">
-                  <UserCircle className="h-4 w-4" />
-                  <span className="hidden sm:inline">Sign In</span>
-                </Button>
-              </DialogTrigger>
-              <DialogContent className="sm:max-w-md">
-                <DialogHeader>
-                  <DialogTitle>Sign In to Your Account</DialogTitle>
-                </DialogHeader>
-                <LoginForm onSuccess={() => setIsLoginOpen(false)} />
-              </DialogContent>
-            </Dialog>
-          </div>
-
-          {/* Logo in center */}
-          <div className="absolute left-1/2 transform -translate-x-1/2">
+          {/* Logo */}
+          <div>
             <Link to="/" aria-label="Nakmabe Centre">
               <img 
                 src="/lovable-uploads/89852479-5570-4b2c-979d-13ec7ce39841.png" 
@@ -88,10 +92,38 @@ const Navbar = () => {
             </Link>
           </nav>
 
+          {/* Auth buttons on right */}
+          <div className="flex items-center space-x-4">
+            {user ? (
+              <div className="flex items-center space-x-3">
+                <Link to="/dashboard">
+                  <Button variant="outline" size="sm">
+                    Dashboard
+                  </Button>
+                </Link>
+                <Button 
+                  variant="ghost" 
+                  size="sm" 
+                  onClick={handleSignOut}
+                  className="flex items-center gap-1"
+                >
+                  <LogOut className="h-4 w-4" />
+                  <span className="hidden sm:inline">Sign Out</span>
+                </Button>
+              </div>
+            ) : (
+              <Link to="/auth/login">
+                <Button className="bg-primary hover:bg-primary/90">
+                  Nakambe
+                </Button>
+              </Link>
+            )}
+          </div>
+
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden p-2 rounded-md text-foreground"
+            className="lg:hidden ml-4 p-2 rounded-md text-foreground"
             aria-label={isOpen ? "Close menu" : "Open menu"}
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -112,6 +144,24 @@ const Navbar = () => {
             <Link to="/contact" className="nav-link py-3 text-lg">
               Get in Touch
             </Link>
+            {user ? (
+              <>
+                <Link to="/dashboard" className="nav-link py-3 text-lg">
+                  Dashboard
+                </Link>
+                <button 
+                  onClick={handleSignOut}
+                  className="flex items-center text-primary py-3 text-lg"
+                >
+                  <LogOut className="h-5 w-5 mr-2" />
+                  Sign Out
+                </button>
+              </>
+            ) : (
+              <Link to="/auth/login" className="nav-link py-3 text-lg text-primary">
+                Sign In
+              </Link>
+            )}
           </nav>
         </div>
       )}

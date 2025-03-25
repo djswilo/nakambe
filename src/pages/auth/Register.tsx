@@ -1,25 +1,27 @@
 
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { useToast } from "@/hooks/use-toast";
+import { useAuth } from "@/components/auth/AuthProvider";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Separator } from "@/components/ui/separator";
-import { Mail, Key, User, UserCircle, Facebook, Github } from "lucide-react";
-import { Link, useNavigate } from "react-router-dom";
-import PageTransition from "@/components/PageTransition";
+import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import PageTransition from "@/components/PageTransition";
 import FloatingContactButton from "@/components/FloatingContactButton";
+import { Mail, Key, User, Loader2 } from "lucide-react";
 
 const RegisterPage = () => {
+  const { signUp } = useAuth();
   const { toast } = useToast();
   const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(false);
   const [formData, setFormData] = useState({
-    name: "",
     email: "",
     password: "",
     confirmPassword: "",
+    fullName: "",
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -27,7 +29,7 @@ const RegisterPage = () => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     
     if (formData.password !== formData.confirmPassword) {
@@ -42,20 +44,31 @@ const RegisterPage = () => {
     setIsLoading(true);
 
     try {
-      // This would be replaced with actual Supabase auth
-      console.log("Register with:", formData);
+      const { error, data } = await signUp(
+        formData.email, 
+        formData.password,
+        { 
+          full_name: formData.fullName,
+        }
+      );
       
-      toast({
-        title: "Registration Coming Soon",
-        description: "User registration will be implemented with Supabase integration.",
-      });
-      
-      // Redirect to home page after successful registration
-      navigate("/");
+      if (error) {
+        toast({
+          title: "Registration failed",
+          description: error.message,
+          variant: "destructive",
+        });
+      } else {
+        toast({
+          title: "Registration successful",
+          description: "We've sent you an email to verify your account. Please check your inbox.",
+        });
+        navigate("/auth/login");
+      }
     } catch (error) {
       toast({
-        title: "Error",
-        description: "An error occurred during registration.",
+        title: "An unexpected error occurred",
+        description: "Please try again later",
         variant: "destructive",
       });
     } finally {
@@ -71,18 +84,18 @@ const RegisterPage = () => {
           <div className="max-w-md mx-auto bg-white p-8 rounded-xl shadow-subtle">
             <div className="text-center mb-8">
               <h1 className="text-2xl font-medium mb-2">Create an Account</h1>
-              <p className="text-foreground/70">Join Nakmabe Centre community</p>
+              <p className="text-foreground/70">Join the Nakmabe Centre community</p>
             </div>
             
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="space-y-2">
                 <div className="relative">
                   <Input
-                    id="name"
-                    name="name"
+                    id="fullName"
+                    name="fullName"
                     type="text"
                     placeholder="Full Name"
-                    value={formData.name}
+                    value={formData.fullName}
                     onChange={handleChange}
                     className="pl-10"
                     required
@@ -154,10 +167,7 @@ const RegisterPage = () => {
               <Button type="submit" className="w-full" disabled={isLoading}>
                 {isLoading ? (
                   <span className="flex items-center justify-center">
-                    <svg className="animate-spin -ml-1 mr-2 h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                    </svg>
+                    <Loader2 className="animate-spin mr-2 h-4 w-4" />
                     Creating account...
                   </span>
                 ) : (
@@ -169,39 +179,10 @@ const RegisterPage = () => {
             <div className="text-center mt-6">
               <p className="text-sm text-muted-foreground">
                 Already have an account?{" "}
-                <Link to="/" className="text-primary hover:underline" onClick={(e) => {
-                  e.preventDefault();
-                  document.querySelector<HTMLButtonElement>("[aria-label='Sign In']")?.click();
-                }}>
+                <Link to="/auth/login" className="text-primary hover:underline">
                   Sign in
                 </Link>
               </p>
-            </div>
-
-            <div className="relative mt-8">
-              <div className="absolute inset-0 flex items-center">
-                <Separator />
-              </div>
-              <div className="relative flex justify-center">
-                <span className="bg-background px-2 text-xs text-muted-foreground">
-                  OR SIGN UP WITH
-                </span>
-              </div>
-            </div>
-
-            <div className="grid grid-cols-3 gap-3 mt-8">
-              <Button variant="outline" type="button" className="w-full" onClick={() => toast({ title: "Coming Soon", description: "Social signup will be implemented with Supabase." })}>
-                <UserCircle className="h-4 w-4 mr-2" />
-                Google
-              </Button>
-              <Button variant="outline" type="button" className="w-full" onClick={() => toast({ title: "Coming Soon", description: "Social signup will be implemented with Supabase." })}>
-                <Facebook className="h-4 w-4 mr-2" />
-                Facebook
-              </Button>
-              <Button variant="outline" type="button" className="w-full" onClick={() => toast({ title: "Coming Soon", description: "Social signup will be implemented with Supabase." })}>
-                <Github className="h-4 w-4 mr-2" />
-                Github
-              </Button>
             </div>
           </div>
         </div>
